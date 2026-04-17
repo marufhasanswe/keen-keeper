@@ -7,7 +7,7 @@ import { GoGraph } from "react-icons/go";
 const Navbar = () => {
   return (
     <div className="bg-base-100 shadow-sm">
-      <div className="navbar max-w-[90%] mx-auto">
+      <div className="navbar flex-col items-center md:flex-row max-w-[90%] mx-auto">
         <div className="flex-1">
           <a className="text-2xl">
             <span className="font-bold">Keen</span>Keeper

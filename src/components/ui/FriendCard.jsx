@@ -1,7 +1,11 @@
 import React from "react";
+import { Link } from "react-router";
 const FriendCard = ({ friend }) => {
   return (
-    <div className="p-6 shadow bg-white rounded-lg text-center">
+    <Link
+      to={`/friends/${friend.id}`}
+      className="p-6 shadow bg-white rounded-lg text-center"
+    >
       <img
         src={friend.picture}
         alt=""
@@ -28,7 +32,7 @@ const FriendCard = ({ friend }) => {
           </button>
         </p>
       </div>
-    </div>
+    </Link>
   );
 };
 

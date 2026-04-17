@@ -9,7 +9,7 @@ const Footer = () => {
     <div className="bg-[#244D3F]">
       <footer className="footer footer-horizontal footer-center text-primary-content pt-20 pb-8 gap-y-4 container mx-auto">
         <aside>
-          <h2 className="text-7xl text-white">
+          <h2 className="text-4xl md:text-7xl text-white">
             <span className="font-bold">Keen</span>Keeper
           </h2>
           <p className="text-[16px]">
