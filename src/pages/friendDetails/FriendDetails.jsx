@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import useFriends from "../../hooks/useFriends";
 import { SyncLoader } from "react-spinners";
 import { Link, useParams } from "react-router";
@@ -7,14 +7,40 @@ import { FiArchive } from "react-icons/fi";
 import { PiPhoneCallBold } from "react-icons/pi";
 import { MdOutlineTextsms } from "react-icons/md";
 import { HiOutlineVideoCamera } from "react-icons/hi";
+import { FriendsTimelineContext } from "../../context/FriendsTimelineContext";
 
 const FriendDetails = () => {
   const [friends, loading] = useFriends();
   const { id } = useParams();
+  const { timeline, setTimeline } = useContext(FriendsTimelineContext);
   if (friends.length === 0) {
     return loading && <SyncLoader className="text-center mt-10" />;
   }
   const expectedFriend = friends.find((friend) => friend.id == id);
+
+  const handleCallBtn = (name) => {
+    const history = {
+      name: name,
+      type: "Call",
+    };
+    setTimeline([...timeline, history]);
+  };
+
+  const handleTextBtn = (name) => {
+    const history = {
+      name: name,
+      type: "Text",
+    };
+    setTimeline([...timeline, history]);
+  };
+  const handleVideoBtn = (name) => {
+    const history = {
+      name: name,
+      type: "Video",
+    };
+    setTimeline([...timeline, history]);
+  };
+
   return (
     <div className="grid grid-cols md:grid-cols-5 md:grid-rows-3 gap-6 container mx-auto my-20 p-4">
       <div className="md:row-span-3 md:col-span-2 ">
@@ -104,18 +130,29 @@ const FriendDetails = () => {
         <h5 className="text-xl text-[#244D3F] font-medium">Quick Check-In</h5>
 
         <div className="grid grid-cols-3 gap-4 mt-4">
-          <Link className="text-center rounded-lg p-4 bg-[#F8FAFC]">
+          <button
+            className="inline-block cursor-pointer text-center rounded-lg p-4 bg-[#F8FAFC]"
+            onClick={() => handleCallBtn(expectedFriend.name)}
+          >
             <PiPhoneCallBold className="mx-auto text-2xl" />
-            <span className="text-sm text-[#64748B]">Call</span>
-          </Link>
-          <Link className="text-center rounded-lg p-4 bg-[#F8FAFC]">
+            <span className=" text-sm text-[#64748B]">Call</span>
+          </button>
+
+          <button
+            className=" cursor-pointer text-center rounded-lg p-4 bg-[#F8FAFC]"
+            onClick={() => handleTextBtn(expectedFriend.name)}
+          >
             <MdOutlineTextsms className="mx-auto text-2xl" />
             <span className="text-sm text-[#64748B]">Text</span>
-          </Link>
-          <Link className="text-center rounded-lg p-4 bg-[#F8FAFC]">
+          </button>
+
+          <button
+            className="cursor-pointer text-center rounded-lg p-4 bg-[#F8FAFC]"
+            onClick={() => handleVideoBtn(expectedFriend.name)}
+          >
             <HiOutlineVideoCamera className="mx-auto text-2xl" />
             <span className="text-sm text-[#64748B]">Video</span>
-          </Link>
+          </button>
         </div>
       </div>
     </div>

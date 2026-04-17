@@ -4,9 +4,12 @@ import "./index.css";
 import MainLayout from "./mainLayout/MainLayout";
 import { RouterProvider } from "react-router";
 import { router } from "./router/Routes";
+import FriendsTimelineProvider from "./context/FriendsTimelineProvider";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <FriendsTimelineProvider>
+      <RouterProvider router={router} />
+    </FriendsTimelineProvider>
   </StrictMode>,
 );
