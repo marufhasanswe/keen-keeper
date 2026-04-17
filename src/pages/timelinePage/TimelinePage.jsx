@@ -7,9 +7,11 @@ import videoImg from "../../assets/video.png";
 const TimelinePage = () => {
   const { timeline, setTimeline } = useContext(FriendsTimelineContext);
   return (
-    <div className="container mx-auto my-8 md:my-20 space-y-6">
-      <h2 className="text-5xl text-[#1F2937] font-bold">Timeline</h2>
-      <select className="w-[300px] px-4 py-3  rounded shadow bg-white text-lg text-[#64748B]">
+    <div className="container mx-auto my-8 md:my-20 space-y-6 p-4">
+      <h2 className="text-3xl md:text-5xl text-[#1F2937] font-bold">
+        Timeline
+      </h2>
+      <select className="md:w-[347px] max-w-[300px] px-4 py-3  rounded shadow bg-white text-lg text-[#64748B]">
         <option value="Filter timeline">Filter timeline</option>
         <option value="Call">Call</option>
         <option value="Text">Text</option>

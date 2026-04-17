@@ -8,6 +8,7 @@ import { PiPhoneCallBold } from "react-icons/pi";
 import { MdOutlineTextsms } from "react-icons/md";
 import { HiOutlineVideoCamera } from "react-icons/hi";
 import { FriendsTimelineContext } from "../../context/FriendsTimelineContext";
+import { toast } from "react-toastify";
 
 const FriendDetails = () => {
   const [friends, loading] = useFriends();
@@ -24,6 +25,7 @@ const FriendDetails = () => {
       type: "Call",
     };
     setTimeline([...timeline, history]);
+    toast.success(`Call with ${name}`);
   };
 
   const handleTextBtn = (name) => {
@@ -32,6 +34,7 @@ const FriendDetails = () => {
       type: "Text",
     };
     setTimeline([...timeline, history]);
+    toast.success(`Text with ${name}`);
   };
   const handleVideoBtn = (name) => {
     const history = {
@@ -39,6 +42,7 @@ const FriendDetails = () => {
       type: "Video",
     };
     setTimeline([...timeline, history]);
+    toast.success(`Video with ${name}`);
   };
 
   return (

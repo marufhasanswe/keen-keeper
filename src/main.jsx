@@ -5,11 +5,13 @@ import MainLayout from "./mainLayout/MainLayout";
 import { RouterProvider } from "react-router";
 import { router } from "./router/Routes";
 import FriendsTimelineProvider from "./context/FriendsTimelineProvider";
+import { ToastContainer } from "react-toastify";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <FriendsTimelineProvider>
       <RouterProvider router={router} />
+      <ToastContainer />
     </FriendsTimelineProvider>
   </StrictMode>,
 );
