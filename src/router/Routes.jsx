@@ -2,8 +2,8 @@ import { createBrowserRouter } from "react-router";
 import Navbar from "../components/shared/Navbar";
 import MainLayout from "../mainLayout/MainLayout";
 import Homepage from "../pages/homepage/Homepage";
-import TimelinePage from "../pages/timeline/TimelinePage";
-import StatsPage from "../pages/stats/StatsPage";
+import TimelinePage from "../pages/timelinePage/TimelinePage";
+import StatsPage from "../pages/statsPage/StatsPage";
 
 export const router = createBrowserRouter([
   {
