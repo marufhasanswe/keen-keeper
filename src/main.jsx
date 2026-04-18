@@ -11,7 +11,7 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     <FriendsTimelineProvider>
       <RouterProvider router={router} />
-      <ToastContainer />
+      <ToastContainer position="top-left" />
     </FriendsTimelineProvider>
   </StrictMode>,
 );
