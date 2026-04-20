@@ -30,7 +30,7 @@ const StatsPage = () => {
       <div className="p-8 mt-6 rounded-lg bg-white">
         <p className="text-xl text-[#244D3F]">By Interaction Type</p>
         {callCount == 0 && textCount == 0 && videoCount == 0 ? (
-          <h2 className="text-center text-3xl text-[#244D3F] py-8">
+          <h2 className="text-center text-3xl text-gray-300 py-8">
             No interaction
           </h2>
         ) : (

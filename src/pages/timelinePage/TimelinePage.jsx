@@ -54,8 +54,8 @@ const TimelinePage = () => {
                   </span>
                   with {history.name}
                 </h3>
-                <p className="text-[16px] text-[#64748B]">
-                  {new Date().toLocaleDateString("en-US", {
+                <p>
+                  {new Date(history.date).toLocaleDateString("en-US", {
                     month: "long",
                     day: "numeric",
                     year: "numeric",

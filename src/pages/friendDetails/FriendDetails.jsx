@@ -15,7 +15,7 @@ const FriendDetails = () => {
   const { id } = useParams();
   const { timeline, setTimeline } = useContext(FriendsTimelineContext);
   if (friends.length === 0) {
-    return loading && <SyncLoader className="text-center mt-10" />;
+    return loading && <SyncLoader className="text-center my-10" />;
   }
   const expectedFriend = friends.find((friend) => friend.id == id);
 
@@ -23,6 +23,7 @@ const FriendDetails = () => {
     const history = {
       name: name,
       type: "Call",
+      date: new Date(),
     };
     setTimeline([...timeline, history]);
     toast.success(`Call with ${name}`);
@@ -32,6 +33,7 @@ const FriendDetails = () => {
     const history = {
       name: name,
       type: "Text",
+      date: new Date(),
     };
     setTimeline([...timeline, history]);
     toast.success(`Text with ${name}`);
@@ -40,6 +42,7 @@ const FriendDetails = () => {
     const history = {
       name: name,
       type: "Video",
+      date: new Date(),
     };
     setTimeline([...timeline, history]);
     toast.success(`Video with ${name}`);
